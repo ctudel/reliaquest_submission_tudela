@@ -1,10 +1,9 @@
 package com.challenge.api.controller;
 
 import com.challenge.api.model.Employee;
+import com.challenge.api.service.EmployeeService;
 import java.util.List;
 import java.util.UUID;
-
-import com.challenge.api.service.EmployeeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +26,11 @@ public class EmployeeController {
      * @return One or more Employees.
      */
     public List<Employee> getAllEmployees() {
-        try { return service.getAll(); } catch (Error e) { throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR); }
+        try {
+            return service.getAll();
+        } catch (Error e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     /**
@@ -38,7 +41,11 @@ public class EmployeeController {
      */
     @GetMapping("/{uuid}")
     public Employee getEmployeeByUuid(@PathVariable UUID uuid) {
-        try { return service.getById(uuid); } catch (Error e) { throw new ResponseStatusException(HttpStatus.NOT_FOUND); }
+        try {
+            return service.getById(uuid);
+        } catch (Error e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
     }
 
     /**
@@ -49,6 +56,10 @@ public class EmployeeController {
      */
     @PostMapping("")
     public Employee createEmployee(@Validated(Employee.class) @RequestBody Employee requestBody) {
-        try { return service.create(requestBody); } catch (Error e) { throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR); }
+        try {
+            return service.create(requestBody);
+        } catch (Error e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

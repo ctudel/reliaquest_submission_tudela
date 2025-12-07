@@ -1,9 +1,8 @@
 package com.challenge.api.service;
 
 import com.challenge.api.model.Employee;
-import org.springframework.stereotype.Service;
-
 import java.util.*;
+import org.springframework.stereotype.Service;
 
 /**
  * Service layer to secure API busniess logic. No JPA repo or persistence layer was considered durig implementation
@@ -46,5 +45,4 @@ public class EmployeeService {
         if (returnVal == null) throw new Error("Failed to insert new employee"); // simulate any db errors
         return employees.get(newEmployeeUUID); // encapsulation if needed
     }
-
 }

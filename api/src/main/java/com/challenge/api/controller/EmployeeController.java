@@ -25,6 +25,7 @@ public class EmployeeController {
      * @implNote Need not be concerned with an actual persistence layer. Generate mock Employee models as necessary.
      * @return One or more Employees.
      */
+    @GetMapping("")
     public List<Employee> getAllEmployees() {
         try {
             return service.getAll();

@@ -5,6 +5,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 
+/**
+ * Service layer to secure API busniess logic. No JPA repo or persistence layer was considered durig implementation
+ */
 @Service
 public class EmployeeService {
     // Data structure to imitate backend for this challenge

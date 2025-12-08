@@ -5,7 +5,7 @@ import java.util.*;
 import org.springframework.stereotype.Service;
 
 /**
- * Service layer to secure API busniess logic. No JPA repo or persistence layer was considered durig implementation
+ * Service layer to secure API busniess logic. No JPA repo or persistence layer was considered during implementation
  */
 @Service
 public class EmployeeService {
